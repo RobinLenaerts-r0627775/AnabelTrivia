@@ -21,8 +21,14 @@ namespace AnabelTrivia.Controller
         // GET: Questions
         public IActionResult Index()
         {
-            var questions = _context.Questions.ToList();
-            return View();
+            //var questions = _context.Questions.ToList();
+            var questions = new List<Question>();
+            var q = new Question();
+            q.Category = "Domme vraag";
+            q.QuestionText = "Is dit oke??";
+            q.ID = 0;
+            questions.Add(q);
+            return View(questions);
             /*_context.Questions != null
             ? View( /*await _context.Questions.ToListAsync())
             : Problem("Entity set 'DatabaseContext.Questions'  is null.");*/
