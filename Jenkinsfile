@@ -30,7 +30,7 @@ pipeline {
                        kill -9 $pid
                done'''
                sh 'cd AnabelTrivia'
-               sh 'nohup dotnet watch --project=AnabelTrivia/AnabelTrivia.csproj --urls=http://localhost:55028 --ip=localhost --port=55028'
+               sh 'nohup dotnet watch --project=AnabelTrivia/AnabelTrivia.csproj'
              }
         }
     }
