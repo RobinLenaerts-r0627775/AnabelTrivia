@@ -7,5 +7,6 @@ namespace AnabelTrivia.Data
         [Key] public int ID { get; set; }
         [DataType(DataType.Text)] public string QuestionText { get; set; }
         [DataType(DataType.Text)] public string Category { get; set; }
+        [DataType(DataType.Text)] public string Used { get; set; }
     }
 }

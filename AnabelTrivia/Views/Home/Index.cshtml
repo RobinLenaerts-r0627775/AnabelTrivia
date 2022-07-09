@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AnabelTrivia.Data.Question>
+﻿@using Microsoft.CodeAnalysis.CSharp.Syntax
+@model IEnumerable<AnabelTrivia.Data.Question>
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +8,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-controller="Home" asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -17,6 +18,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Used)
             </th>
             <th></th>
         </tr>
@@ -31,9 +35,13 @@
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <p>@item.Used</p>
+                <input type="checkbox" disabled @(item.Used == "Y" ? "checked" : "")/>
+            </td>
+            <td>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

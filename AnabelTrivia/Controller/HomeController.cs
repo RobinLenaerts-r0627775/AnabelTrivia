@@ -19,19 +19,10 @@ namespace AnabelTrivia.Controller
         }
 
         // GET: Questions
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            //var questions = _context.Questions.ToList();
-            var questions = new List<Question>();
-            var q = new Question();
-            q.Category = "Domme vraag";
-            q.QuestionText = "Is dit oke??";
-            q.ID = 0;
-            questions.Add(q);
+            var questions = _context.Questions.ToList();
             return View(questions);
-            /*_context.Questions != null
-            ? View( /*await _context.Questions.ToListAsync())
-            : Problem("Entity set 'DatabaseContext.Questions'  is null.");*/
         }
 
         // GET: Questions/Details/5
@@ -69,7 +60,7 @@ namespace AnabelTrivia.Controller
             {
                 _context.Add(question);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
 
             return View(question);
@@ -123,7 +114,7 @@ namespace AnabelTrivia.Controller
                     }
                 }
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexAsync));
             }
 
             return View(question);
@@ -164,7 +155,7 @@ namespace AnabelTrivia.Controller
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexAsync));
         }
 
         private bool QuestionExists(int id)

@@ -14,10 +14,9 @@ namespace AnabelTrivia.Data
         {
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +28,7 @@ namespace AnabelTrivia.Data
                 entity.HasKey(e => e.ID);
                 entity.Property(e => e.QuestionText).IsRequired();
                 entity.Property(e => e.Category).IsRequired();
+                entity.Property(e => e.Used).IsRequired();
             });
         }
     }
