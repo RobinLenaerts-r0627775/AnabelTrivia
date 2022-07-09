@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var _configurations = new ConfigurationManager();
 // Add services to the container.
 builder.Services.AddRazorPages();
+var connectionstring = builder.Configuration.GetConnectionString("Reynolds");
 builder.Services.AddDbContextPool<DatabaseContext>(options => options
-    .UseMySQL("server=84.192.29.108;port=3306;database=AnabelTrivia;user=admin;password=klp246135;pooling=false"));
+    .UseMySQL(connectionstring));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
