@@ -30,7 +30,7 @@ pipeline {
                        kill -9 $pid
                done'''
                sh 'cd AnabelTrivia'
-               sh 'nohup dotnet watch --project=AnabelTrivia/AnabelTrivia.csproj /dev/null 2>&1 &''
+               sh 'nohup dotnet watch --project=AnabelTrivia/AnabelTrivia.csproj /dev/null 2>&1 &'
              }
         }
     }
