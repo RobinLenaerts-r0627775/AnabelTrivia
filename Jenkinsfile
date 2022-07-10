@@ -19,7 +19,7 @@ pipeline {
                sh '''for pid in $(lsof -t -i:55028); do
                        kill -9 $pid
                done'''
-               sh 'nohup dotnet watch --project=AnabelTrivia/AnabelTrivia.csproj /dev/null 2>&1 &'
+               sh 'nohup dotnet watch --project=AnabelTrivia/AnabelTrivia.csproj '
              }
         }
     }
