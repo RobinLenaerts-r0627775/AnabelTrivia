@@ -23,7 +23,7 @@ pipeline {
              steps{
                sh 'dotnet publish AnabelTrivia/ArgonDotNet.csproj --configuration Release --no-restore'
              }
-        }
+         }
         stage('Deploy'){
              steps{
                sh '''for pid in $(lsof -t -i:55028); do
