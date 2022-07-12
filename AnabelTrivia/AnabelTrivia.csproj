@@ -22,5 +22,8 @@
     <PackageReference Include="MySql.Data" Version="8.0.29" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.1" />
   </ItemGroup>
+  <ItemGroup>
+   <None Include="appsettings.Release.json" CopyToPublishDirectory="Always" />
+  </ItemGroup>
 
 </Project>
