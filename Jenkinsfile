@@ -14,7 +14,7 @@ pipeline {
                sh 'dotnet clean AnabelTrivia.sln --configuration Release'
             }
          }
-         tage('Build'){
+         stage('Build'){
            steps{
                sh 'dotnet build AnabelTrivia.sln --configuration Release --no-restore'
             }
