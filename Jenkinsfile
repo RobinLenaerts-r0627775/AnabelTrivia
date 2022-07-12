@@ -19,7 +19,7 @@ pipeline {
                sh '''for pid in $(lsof -t -i:55028); do
                        kill -9 $pid
                done'''
-               sh 'nohup dotnet AnabelTrivia/bin/Release/net6.0/publish/AnabelTrivia.dll --urls=http://0.0.0.0:55027 --ip=0.0.0.0 --port=55027'
+               sh 'nohup dotnet AnabelTrivia/bin/Release/net6.0/publish/AnabelTrivia.dll --urls=http://127.0.0.1:55027 --ip=127.0.0.1 --port=55027'
              }
         }
     }
