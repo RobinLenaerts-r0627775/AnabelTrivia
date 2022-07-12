@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 var _configurations = new ConfigurationManager();
 // Add services to the container.
 builder.Services.AddRazorPages();
-var connectionstring = builder.Configuration.GetConnectionString("Reynolds");
+//var connectionstring = builder.Configuration.GetConnectionString("Reynolds");
+var connectionstring = "server=localhost;port=3306;database=AnabelTrivia;user=admin;password=klp246135;pooling=false";
 builder.Services.AddDbContextPool<DatabaseContext>(options => options
     .UseMySQL(connectionstring));
 builder.Services.AddControllersWithViews();
