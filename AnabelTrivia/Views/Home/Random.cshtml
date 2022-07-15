@@ -3,14 +3,14 @@
 @{
     ViewData["Title"] = Model.Category;
 }
-    <h1>@Model.Category</h1>
+    <h2>@Model.Category</h2>
 
 <div>
     <hr/>
-    <p>@Model.QuestionText</p>
+    <h1>@Model.QuestionText</h1>
 </div>
 <div>
-    <h4>Pick another question:</h4>
+    <h2>Pick another question:</h2>
     @foreach (var cat in ViewBag.Categories)
     {
         <a class="btn btn-primary" asp-controller="Home" asp-action="Random" asp-route-category="@cat">@cat</a>
