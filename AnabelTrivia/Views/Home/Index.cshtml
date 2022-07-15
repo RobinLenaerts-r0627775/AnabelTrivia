@@ -9,7 +9,6 @@
 @foreach (var cat in ViewBag.Categories)
 {
     <a class="btn btn-success" asp-controller="Home" asp-action="Random" asp-route-category="@cat">
-        <i class="bi bi-balloon-heart"></i>
         @cat
     </a>
 }
