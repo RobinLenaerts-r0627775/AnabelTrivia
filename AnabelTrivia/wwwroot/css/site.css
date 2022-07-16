@@ -16,3 +16,34 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.Familie{
+    background-color: saddlebrown !important;
+    border-color: saddlebrown;
+}
+
+.Persoonlijk{
+    background-color: hotpink;
+    border-color: hotpink;
+}
+
+.Material{
+    background-color: blue;
+    border-color: blue;
+}
+
+.Unicorn {
+    background-color: yellow;
+    border-color: yellow;
+    color: black
+}
+
+.Ontspanning{
+    background-color: green;
+    border-color: green;
+}
+
+.Anatomie{
+    background-color: orange;
+    border-color: orange;
+}
